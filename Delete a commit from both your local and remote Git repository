@@ -1,0 +1,38 @@
+# Delete a commit from both your local and remote Git repository, follow these steps carefully.
+
+1. Delete a Commit Locally
+If you want to remove the last commit from your local repository:
+
+Option 1: Revert to the previous commit (safe way)
+
+git reset --soft HEAD^
+
+This command moves the HEAD pointer to the previous commit, but keeps your changes staged, so you can re-commit them if needed.
+
+Alternatively, if you want to discard the changes entirely:
+
+git reset --hard HEAD^
+
+This will completely remove the last commit and its changes from the working directory and staging area.
+
+Option 2: Removing a specific commit in the history (interactive way) If the commit is not the most recent one, you can use:
+
+git rebase -i HEAD~n
+
+Replace n with the number of commits you'd like to go back (e.g., HEAD~5 to edit the last 5 commits). This opens an editor where you can modify commits.
+
+In the editor, change pick to drop next to the commit you want to remove, save, and close the editor.
+
+2. Push the Changes to Remote (force-push)
+
+Once you've removed the commit(s) locally, you'll need to force-push the updated history to the remote repository:
+
+If you removed the most recent commit:
+
+git push origin +branch-name --force
+
+Replace branch-name with the branch you're working on, like main or master. The + before the branch name ensures that you're force-pushing and replacing the remote history.
+
+If you deleted a commit through rebase, you can also force-push the changes:
+
+git push --force
