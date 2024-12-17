@@ -1,5 +1,6 @@
 # Merging feature-branch into main
 
+
 1. Switch to the target branch (where you want the changes to go):
 
 git checkout main
