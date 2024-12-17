@@ -1,15 +1,15 @@
 
 1. Switch to the branch you want to rename:
 
-  git checkout <old-branch-name>
+git checkout <old-branch-name>
 
 Replace <old-branch-name> with the name of the branch you want to rename.
 
 2. Rename the branch:
 
-  git branch -m <new-branch-name>
+git branch -m <new-branch-name>
 
-. Verify the rename:
+3. Verify the rename:
 
 git branch
 
@@ -17,12 +17,12 @@ This will list all the local branches, showing the updated name.
 
 4. Push the renamed branch to the remote (if needed): If the branch is tracked on the remote repository, push the renamed branch:
 
-   git push origin -u <new-branch-name>
+git push origin -u <new-branch-name>
 
 
 5. Delete the old branch on the remote (optional): If the branch exists on the remote and you no longer need the old name:
 
- git push origin --delete <old-branch-name>
+git push origin --delete <old-branch-name>
 
  
 By doing this, the branch will have a new name locally and (if pushed) on the remote as well.
