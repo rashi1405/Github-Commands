@@ -1,0 +1,14 @@
+#Modify a commit message 
+
+To modify the last commit message, you can use the following command:
+
+git commit --amend
+
+This will open your default text editor (like vim or nano) where you can edit the commit message ( press i key to insert).
+After editing, ( press esc) then save and exit ( :wq ) the editor.
+
+If You Already Pushed the Commit:
+
+After amending the commit message, force push it to update the remote repository:
+
+git push --force
